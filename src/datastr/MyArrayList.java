@@ -65,4 +65,31 @@ public class MyArrayList {
 	}
 	
 	
+	//TODO
+	//1. funkcijas deklarācija
+	public void add(int element)
+	{
+		//2. pārbaude isFull - tad resize izsaukums
+		if(isFull()) resize();
+		//3. ieliekam jauno elemntu kā pēdējo sarakstā
+		list[counter++] = element;
+		//4 palielinām counter par 1
+		//counter++;
+	}
+	
+	//TODO
+	//1. funkcijas deklarācija
+	//2. pārbaudes
+	//2.1. par indeksu, ja nav pareizs, tad izmest izņēmumu
+	//2.2 pārbaude isFull - tad resize izsaukums
+	
+	//3. veikt pārkopēšanu, lai elementi sākot no noradīta indeksa
+	//tiek pavirzīti pa labi
+	
+	//4. ievietojam indeksa šūnā pasu elementu
+	//5. palielinām counter par 1
+	
+
+	
+	
 }
