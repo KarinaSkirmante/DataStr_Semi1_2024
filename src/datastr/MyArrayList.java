@@ -79,17 +79,33 @@ public class MyArrayList {
 	
 	//TODO
 	//1. funkcijas deklarācija
+	public void add(int index, int element) throws Exception 
+	{
 	//2. pārbaudes
 	//2.1. par indeksu, ja nav pareizs, tad izmest izņēmumu
+		if(index < 0 || index > counter) 
+			throw new Exception("Incorrect index");
+		
 	//2.2 pārbaude isFull - tad resize izsaukums
-	
-	//3. veikt pārkopēšanu, lai elementi sākot no noradīta indeksa
-	//tiek pavirzīti pa labi
-	
-	//4. ievietojam indeksa šūnā pasu elementu
-	//5. palielinām counter par 1
-	
+		if(isFull()) resize();
+
+		if(index == counter) add(element);
+		else
+		{	//3. veikt pārkopēšanu, lai elementi sākot no noradīta indeksa
+			//tiek pavirzīti pa labi
+			for(int i = counter; i > index; i--) {
+				list[i] = list[i-1];
+			}
+			//4. ievietojam indeksa šūnā pasu elementu
+			list[index] = element;
+			//5. palielinām counter par 1
+			counter++;
+		}
+		
+		
 
 	
+
+	}
 	
 }
