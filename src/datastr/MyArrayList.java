@@ -181,5 +181,27 @@ public class MyArrayList {
 	
 	
 	
+	public void print() throws Exception {
+		
+		if(isEmpty()) throw new Exception("Array is empty and it "
+				+ "is not possible to print elements");
+		
+		for(int i = 0; i < counter;i++) {
+			System.out.print(list[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	
+	public void makeEmpty() {
+		counter = 0;
+		size = LIST_DEFAULT_SIZE;
+		list = new int[size];
+		System.gc();	
+	}
+	
+	
+	
+	
 	
 }
