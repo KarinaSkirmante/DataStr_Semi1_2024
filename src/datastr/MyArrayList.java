@@ -43,7 +43,6 @@ public class MyArrayList {
 		return counter;
 	}
 	
-	//TODO
 	//1. funkcijas deklarācija
 	private void resize()
 	{
@@ -65,7 +64,7 @@ public class MyArrayList {
 	}
 	
 	
-	//TODO
+
 	//1. funkcijas deklarācija
 	public void add(int element)
 	{
@@ -77,7 +76,7 @@ public class MyArrayList {
 		//counter++;
 	}
 	
-	//TODO
+
 	//1. funkcijas deklarācija
 	public void add(int index, int element) throws Exception 
 	{
@@ -101,10 +100,28 @@ public class MyArrayList {
 			//5. palielinām counter par 1
 			counter++;
 		}
-		
-		
-
+	}
 	
+	
+	//1. funkcijas deklarācija
+	public void remove(int index) throws Exception
+	{
+		//2. pārbaudes
+		//2.1 index
+		//2.2. isEmpty
+		if(index < 0 || index >= counter )
+			throw new Exception("Incorrect index");
+		
+		if(isEmpty()) throw new Exception("Array is empty and it "
+				+ "is not possible to remove element");
+
+		//3. veikt kopesanu uz kreiso pusi līdz indexa elementam
+		for(int i = index; i < counter -1; i++)
+		{
+			list[i] = list[i+1];
+		}
+		//4. counter jāsamazina par 1
+		counter--;
 
 	}
 	
