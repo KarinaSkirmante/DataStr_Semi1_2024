@@ -1,5 +1,7 @@
 package datastr;
 
+import java.util.ArrayList;
+
 public class MyArrayList {
 
 	private int[] list;
@@ -124,5 +126,60 @@ public class MyArrayList {
 		counter--;
 
 	}
+	
+	//TODO int funkcijas tips jamaina uz citu tipu pēc nepieciešamībs
+	public int get(int index) throws Exception{
+		if(index < 0 || index >= counter )
+			throw new Exception("Incorrect index");
+		
+		if(isEmpty()) throw new Exception("Array is empty and it "
+				+ "is not possible to return element");
+				
+		return list[index];
+	}
+	
+	public ArrayList search(int element) throws Exception{
+		if(isEmpty()) throw new Exception("Array is empty and it "
+				+ "is not possible to seacrh element");
+		
+		ArrayList indexes = new ArrayList();
+		
+		for(int i = 0; i < counter; i++)
+		{
+			if(list[i] == element)
+			{
+				indexes.add(i);
+			}
+		}
+		
+		if(indexes.size() == 0) 
+			throw new Exception("Element is not found");
+		
+		return indexes;
+
+	}
+	
+	public int[] getNeighbours(int element) throws Exception{
+		ArrayList indexes = search(element);
+		
+		int neighboursSize = indexes.size();
+		//(Integer)indexes.get(indexes.size()-1) <-- pēdejais indexes sunas vērtība
+		if((Integer)indexes.get(indexes.size()-1) == (counter-1))
+			neighboursSize--;
+		
+		int[] neighbours = new int[neighboursSize];
+		for(int i = 0; i < neighboursSize; i++) {
+			int indexFromSearchTemp = (int)indexes.get(i);
+			int indexNeighbourTemp = indexFromSearchTemp+1;
+			neighbours[i]  = list[indexNeighbourTemp];
+			//īsāka forma
+			//neighbours[i] = list[(int)indexes.get(i)+1]
+		}
+		return neighbours;		
+		
+	}
+	
+	
+	
 	
 }
