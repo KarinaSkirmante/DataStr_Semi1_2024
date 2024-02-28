@@ -200,6 +200,27 @@ public class MyArrayList {
 		System.gc();	
 	}
 	
+	//TODO add asc or desc
+	public void sort() throws Exception {
+		if(isEmpty()) throw new Exception("Array is empty and it "
+				+ "is not possible to sort");
+		
+		for(int i = 0; i < counter; i++) {
+			for(int j = 0; j < counter; j++) {
+				if(list[i]> list[j]) {
+					swap(i, j);
+				}
+			}
+		}
+		
+	}
+	
+	private void swap(int index1, int index2) {
+		int temp = list[index1];
+		list[index1] = list[index2];
+		list[index2] = temp;
+		
+	}
 	
 	
 	
