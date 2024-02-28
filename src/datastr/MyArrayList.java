@@ -7,7 +7,6 @@ public class MyArrayList {
 	private int size = LIST_DEFAULT_SIZE;
 	private int counter = 0;
 	
-	//TODO
 	//constructors
 	public MyArrayList() {
 		list = new int[size];
@@ -43,4 +42,27 @@ public class MyArrayList {
 	public int howManyElements() {
 		return counter;
 	}
+	
+	//TODO
+	//1. funkcijas deklarācija
+	private void resize()
+	{
+	//3. apreķināt newSize
+		int newSize = (counter <= 100)? size * 2 : (int)(size * 1.5);
+	//4. izveidot listNew ar newSize izmeru
+		int[] listNew = new int[newSize];
+	//5. veikt kopēsanu no veca masīva uz jauno
+		for(int i = 0; i < size; i++) {
+			listNew[i] = list[i];
+		}
+		
+	//6. nomainam list refernci uz listNew
+		list = listNew;
+	//7. izsaukt Garbage Collector
+		System.gc();
+	//8. size noaminām uz newSize
+		size = newSize;
+	}
+	
+	
 }
