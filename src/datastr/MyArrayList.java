@@ -2,6 +2,8 @@ package datastr;
 
 import java.util.ArrayList;
 
+import model.Student;
+
 public class MyArrayList<Ttype> {
 
 	private Ttype[] list;
@@ -214,8 +216,7 @@ public class MyArrayList<Ttype> {
 		for(int i = 0; i < counter; i++) {
 			for(int j = 0; j < counter; j++) {
 				//if(list[i]> list[j]) {
-			
-				if(   ((Comparable)(list[i])).compareTo(list[j]) == 1 ){
+				if(   ((Comparable)(list[i])).compareTo(list[j]) == -1 ){
 					swap(i, j);
 				}
 			}

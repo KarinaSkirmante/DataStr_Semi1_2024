@@ -60,7 +60,7 @@ public class MainService {
 			System.out.println(Arrays.toString(allStudents.getNeighbours(s1)));//Liga
 			
 			allStudents.print();//Baiba Janis Liga
-			//allStudents.sort();
+			allStudents.sort();
 			allStudents.print();//Baiba Janis Liga
 				
 			
