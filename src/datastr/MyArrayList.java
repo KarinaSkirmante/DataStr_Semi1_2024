@@ -111,11 +111,14 @@ public class MyArrayList {
 		//2. pārbaudes
 		//2.1 index
 		//2.2. isEmpty
-		if(index < 0 || index >= counter )
-			throw new Exception("Incorrect index");
 		
 		if(isEmpty()) throw new Exception("Array is empty and it "
 				+ "is not possible to remove element");
+		
+		if(index < 0 || index >= counter )
+			throw new Exception("Incorrect index");
+		
+	
 
 		//3. veikt kopesanu uz kreiso pusi līdz indexa elementam
 		for(int i = index; i < counter -1; i++)
@@ -129,11 +132,14 @@ public class MyArrayList {
 	
 	//TODO int funkcijas tips jamaina uz citu tipu pēc nepieciešamībs
 	public int get(int index) throws Exception{
-		if(index < 0 || index >= counter )
-			throw new Exception("Incorrect index");
 		
 		if(isEmpty()) throw new Exception("Array is empty and it "
 				+ "is not possible to return element");
+		
+		if(index < 0 || index >= counter )
+			throw new Exception("Incorrect index");
+		
+		
 				
 		return list[index];
 	}
