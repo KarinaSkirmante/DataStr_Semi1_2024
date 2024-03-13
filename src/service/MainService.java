@@ -4,11 +4,14 @@ import java.util.Arrays;
 
 import datastr.MyArrayList;
 
+
+//TODO nokopēt Student klasi un ielikt model pakotnē
+//TODO izveidot MyArrayList<Student> un to notestēt ar visām funkcijām
 public class MainService {
 
 	public static void main(String[] args) {
 	
-		MyArrayList myList = new MyArrayList(3);
+		MyArrayList<Integer> myList = new MyArrayList<Integer>(3);
 		
 		myList.add(100);
 		myList.add(200);
