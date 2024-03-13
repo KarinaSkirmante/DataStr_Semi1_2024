@@ -1,6 +1,9 @@
 package service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import datastr.MyArrayList;
 import model.Student;
@@ -78,12 +81,49 @@ public class MainService {
 		}
 		
 		
-		
-		
+		try {
+			MyArrayList<Integer> numbersFromFile = readFromFile("resources\\numbers.txt");
+			numbersFromFile.print();
+			numbersFromFile.sort();
+			numbersFromFile.print();
+		} catch (NumberFormatException e) {
+			System.out.println("It is not possible to parse string to integer");
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
 		
 		
 		
 	}
+	
+	public static MyArrayList<Integer> readFromFile(String path) throws Exception, FileNotFoundException,  NumberFormatException {
+		if(path == null || path.length() < 3) throw new Exception("Problem with file path");
+	
+	
+		MyArrayList<Integer> listForNumbers = new MyArrayList<Integer>();
+		File file = new File(path);
+		//TODO izveidot FileInputStream
+		Scanner scanner = new Scanner(file);
+		
+		while(scanner.hasNextLine()) {
+			String line = scanner.nextLine();
+			
+			Integer tempNumber = Integer.parseInt(line);
+			listForNumbers.add(tempNumber);	
+		}
+		
+		scanner.close();
+		return listForNumbers;
+		
+	
+	}
+	
+	
+	
+	
+	
 
 }
